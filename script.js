@@ -1,16 +1,22 @@
 const sections = document.querySelectorAll("main section[id]");
-const navLinks = document.querySelectorAll(".top-nav a");
-const yearNode = document.getElementById("year");
+const navLinks = document.querySelectorAll(".section-rail a");
+const sectionMarker = document.querySelector(".section-marker");
 const profilePhoto = document.querySelector(".profile-photo");
-
-if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
-}
 
 if (profilePhoto) {
   profilePhoto.addEventListener("error", () => {
     profilePhoto.style.display = "none";
   });
+}
+
+function updateMarker(link) {
+  if (!sectionMarker || !link) {
+    return;
+  }
+
+  const offset = link.offsetTop - 14;
+  sectionMarker.style.transform = `translateY(${offset}px)`;
+  sectionMarker.style.height = `${link.offsetHeight}px`;
 }
 
 const observer = new IntersectionObserver(
@@ -21,10 +27,12 @@ const observer = new IntersectionObserver(
       }
 
       navLinks.forEach((link) => {
-        link.classList.toggle(
-          "is-active",
-          link.getAttribute("href") === `#${entry.target.id}`
-        );
+        const isActive = link.getAttribute("href") === `#${entry.target.id}`;
+        link.classList.toggle("is-active", isActive);
+
+        if (isActive) {
+          updateMarker(link);
+        }
       });
     });
   },
@@ -35,3 +43,12 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
+
+if (navLinks.length > 0) {
+  updateMarker(navLinks[0]);
+}
+
+window.addEventListener("resize", () => {
+  const activeLink = document.querySelector(".section-rail a.is-active") || navLinks[0];
+  updateMarker(activeLink);
+});

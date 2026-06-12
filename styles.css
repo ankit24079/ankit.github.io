@@ -54,63 +54,57 @@ h3 {
   margin: 0 auto;
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid var(--line);
+.section-rail {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  z-index: 30;
+  display: grid;
+  gap: 10px;
+  padding: 14px 14px 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow);
+  transform: translateY(-50%);
   backdrop-filter: blur(10px);
 }
 
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  min-height: 72px;
-}
-
-.brand {
-  color: var(--heading);
-  font-size: 1.05rem;
-  font-weight: 700;
-}
-
-.top-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.top-nav a {
+.section-rail a {
   position: relative;
+  z-index: 1;
+  min-width: 110px;
+  padding: 8px 12px;
+  border-radius: 12px;
   color: var(--muted);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
 }
 
-.top-nav a::after {
-  content: "";
+.section-rail a.is-active {
+  color: var(--heading);
+  transform: translateX(-2px);
+}
+
+.section-marker {
   position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
+  left: 8px;
+  top: 14px;
+  width: 4px;
+  height: 34px;
+  border-radius: 999px;
   background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 160ms ease;
-}
-
-.top-nav a:hover::after,
-.top-nav a.is-active::after {
-  transform: scaleX(1);
+  transition:
+    transform 220ms ease,
+    height 220ms ease;
 }
 
 .page-shell {
-  padding: 40px 0 80px;
+  padding: 56px 0 80px;
 }
 
 .page-layout {
@@ -122,7 +116,7 @@ h3 {
 
 .profile-sidebar {
   position: sticky;
-  top: 108px;
+  top: 40px;
   text-align: center;
 }
 
@@ -172,7 +166,7 @@ h3 {
 
 .content-section {
   margin-bottom: 48px;
-  scroll-margin-top: 110px;
+  scroll-margin-top: 32px;
 }
 
 .content-section h2 {
@@ -240,8 +234,8 @@ h3 {
 
 .education-logo {
   width: 100%;
-  max-width: 132px;
-  max-height: 72px;
+  max-width: 96px;
+  max-height: 52px;
   object-fit: contain;
   background: #fff;
 }
@@ -259,6 +253,10 @@ h3 {
   .profile-photo {
     max-width: 290px;
   }
+
+  .section-rail {
+    right: 16px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -266,19 +264,31 @@ h3 {
     --container: min(1360px, calc(100% - 34px));
   }
 
+  .section-rail {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    top: auto;
+    left: 12px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+    padding: 10px;
+    transform: none;
+  }
+
+  .section-rail a {
+    min-width: 0;
+    padding: 8px 6px;
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  .section-marker {
+    display: none;
+  }
+
   .page-shell {
-    padding: 28px 0 56px;
-  }
-
-  .topbar {
-    min-height: auto;
-    padding: 16px 0;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .top-nav {
-    gap: 14px;
+    padding: 28px 0 104px;
   }
 
   .content-section h2 {
@@ -296,6 +306,6 @@ h3 {
   }
 
   .education-logo {
-    max-width: 140px;
+    max-width: 92px;
   }
 }
