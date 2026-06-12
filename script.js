@@ -1,9 +1,21 @@
 const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll(".site-nav a");
 const yearNode = document.getElementById("year");
+const profilePhoto = document.querySelector(".profile-photo");
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
+}
+
+if (profilePhoto) {
+  profilePhoto.addEventListener("error", () => {
+    profilePhoto.closest(".portrait")?.classList.add("is-empty");
+    profilePhoto.remove();
+  });
+
+  profilePhoto.addEventListener("load", () => {
+    profilePhoto.closest(".portrait")?.classList.remove("is-empty");
+  });
 }
 
 const observer = new IntersectionObserver(

@@ -13,9 +13,9 @@
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="#top">Ankit Kumar</a>
+        <a class="brand" href="#home">Ankit Kumar</a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="#about">About</a>
+          <a href="#home">Home</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
@@ -24,20 +24,20 @@
       </div>
     </header>
 
-    <main id="top">
-      <section class="intro">
-        <div class="intro-backdrop" aria-hidden="true"></div>
-        <div class="container intro-layout">
-          <div class="intro-copy">
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <div class="container hero-layout">
+          <div class="hero-copy">
             <p class="eyebrow">Robotics Portfolio</p>
             <h1>Ankit Kumar</h1>
-            <p class="intro-role">MS Robotics @ University of Minnesota, Twin Cities</p>
-            <p class="intro-summary">
-              Robotics MS student specializing in perception, SLAM, and autonomous
-              navigation for drones and mobile robots. I work across stereo vision,
-              LiDAR localization, ROS2, Nav2, and embedded deployment for real-time
-              robotic systems. I am currently a Research Assistant at the Flow Field
-              Imaging Lab under Prof. Jiarong Hong.
+            <p class="hero-role">MS Robotics, University of Minnesota Twin Cities</p>
+            <p class="hero-intro">
+              I am a Robotics MS student focused on perception, SLAM, and autonomous
+              navigation for drones and mobile robots. I currently work as a Research
+              Assistant in the Flow Field Imaging Lab under Prof. Jiarong Hong, where
+              I build real-time robotic systems across stereo vision, LiDAR
+              localization, ROS2, Nav2, and embedded deployment.
             </p>
             <div class="link-row" aria-label="Profile links">
               <a class="link-pill" href="mailto:kuma0334@umn.edu">Email</a>
@@ -68,187 +68,109 @@
             </ul>
           </div>
 
-          <aside class="profile-card">
-            <div class="profile-copy">
-              <p class="profile-title">Current focus</p>
-              <p class="profile-text">
-                Real-time perception and control for custom drone platforms, with an
-                emphasis on stereo tracking, autonomy pipelines, and robust deployment
-                on Jetson Orin Nano.
-              </p>
-              <div class="focus-grid" aria-label="Current focus areas">
-                <div class="focus-card">
-                  <strong>Stereo vision</strong>
-                  <span>triangulation and temporal tracking</span>
-                </div>
-                <div class="focus-card">
-                  <strong>Navigation</strong>
-                  <span>LiDAR localization, RTAB-Map, Nav2</span>
-                </div>
-                <div class="focus-card">
-                  <strong>Embedded</strong>
-                  <span>Jetson Orin Nano deployment and optimization</span>
-                </div>
-              </div>
+          <aside class="portrait-card">
+            <div class="portrait is-empty">
+              <img
+                class="profile-photo"
+                src="assets/profile-photo.jpg"
+                alt="Portrait of Ankit Kumar"
+                onload="this.closest('.portrait').classList.remove('is-empty')"
+                onerror="this.closest('.portrait').classList.add('is-empty'); this.remove();"
+              />
             </div>
           </aside>
         </div>
       </section>
 
-      <section id="about" class="section">
-        <div class="container about-layout">
-          <div>
-            <p class="section-label">About</p>
-            <h2>Building dependable autonomy systems for drones and mobile robots.</h2>
-          </div>
-          <div class="body-copy">
-            <p>
-              I am a Master&apos;s student in Robotics at the University of Minnesota,
-              specializing in perception, SLAM, and navigation. My work combines
-              computer vision, multi-sensor fusion, and embedded deployment for robotic
-              platforms that need to operate in real time.
-            </p>
-            <p>
-              Recent work includes wildfire ember tracking on a custom drone platform,
-              autonomous navigation pipelines in Isaac Sim, and simulation frameworks
-              for VTOL flight testing with ArduPilot and ROS2. I currently work as a
-              Research Assistant in the Flow Field Imaging Lab under Prof. Jiarong
-              Hong.
-            </p>
-            <ul class="highlight-list">
-              <li><strong>90-95%</strong> ember detection accuracy with a multi-head U-Net pipeline</li>
-              <li><strong>&lt;10 cm</strong> 3D trajectory error in stereo-based ember tracking</li>
-              <li><strong>10 FPS</strong> embedded deployment performance on Jetson Orin Nano</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" class="section alt">
+      <section id="experience" class="section">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading compact">
             <p class="section-label">Experience</p>
-            <h2>Research and engineering work</h2>
+            <h2>Current research work</h2>
           </div>
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <p class="timeline-role">Research Assistant</p>
-              <p class="timeline-org">
-                Flow Field Imaging Lab, University of Minnesota under Prof. Jiarong
-                Hong
-              </p>
-              <p class="timeline-date">May 2025 - Present</p>
-              <p class="timeline-location">Twin Cities, Minnesota</p>
+
+          <article class="experience-card">
+            <div class="experience-top">
+              <div>
+                <h3>Research Assistant</h3>
+                <p class="experience-org">
+                  Flow Field Imaging Lab, University of Minnesota
+                </p>
+              </div>
+              <p class="experience-meta">May 2025 - Present · Twin Cities, Minnesota</p>
             </div>
-            <div class="timeline-content">
-              <ul>
-                <li>
-                  Developed an end-to-end real-time perception and control pipeline on a
-                  custom drone platform using synchronized stereo cameras and Jetson
-                  Orin Nano for wildfire ember tracking.
-                </li>
-                <li>
-                  Designed and trained a multi-head U-Net with custom multi-task loss,
-                  reaching 90-95% detection accuracy and improving small-object recall
-                  under motion blur and low-contrast conditions.
-                </li>
-                <li>
-                  Built a calibrated stereo vision pipeline with triangulation and
-                  temporal association, achieving less than 10 cm 3D trajectory error
-                  for real-time ember tracking and motion estimation.
-                </li>
-                <li>
-                  Integrated perception with the control loop and optimized the system
-                  for embedded deployment, achieving 10 FPS on Jetson Orin Nano.
-                </li>
-                <li>
-                  Improved robustness by 20-30% under varied conditions through
-                  synthetic data augmentation and evaluation across multiple scenarios.
-                </li>
-              </ul>
-            </div>
+            <p class="experience-summary">
+              I work on perception and control for robotic platforms, with current
+              research centered on stereo-based wildfire ember tracking, real-time
+              autonomy, and embedded deployment on Jetson Orin Nano under Prof.
+              Jiarong Hong.
+            </p>
+            <ul class="experience-list">
+              <li>Built real-time perception and control pipelines for custom drone platforms.</li>
+              <li>Developed stereo vision, tracking, and 3D localization workflows for difficult outdoor conditions.</li>
+              <li>Optimized deployment for embedded robotic systems running onboard compute.</li>
+            </ul>
           </article>
         </div>
       </section>
 
-      <section id="projects" class="section">
+      <section id="projects" class="section alt">
         <div class="container">
           <div class="section-heading">
             <p class="section-label">Projects</p>
-            <h2>Selected robotics and vision projects</h2>
+            <h2>Selected work</h2>
             <p class="section-copy">
-              The layout is ready for project demos, screenshots, and videos. Once you
-              send media files, we can plug them straight into these cards.
+              A few projects across robotics, simulation, reconstruction, and vision.
             </p>
           </div>
 
           <div class="project-grid">
             <article class="project-card">
-              <div class="project-media tone-teal">
-                <span>RGB-D SLAM</span>
-                <span>Nav2</span>
-              </div>
-              <p class="project-date">Jan 2026 - May 2026</p>
               <h3>Autonomous Mobile Robot Navigation SLAM in Isaac Sim</h3>
               <p class="project-stack">ROS2, RTAB-Map, Nav2, LiDAR, Isaac Sim</p>
-              <ul>
-                <li>Built a multi-sensor mobile robot pipeline with RGB-D SLAM, LiDAR localization, and Nav2 waypoint navigation.</li>
-                <li>Implemented a custom 4-wheel differential drive controller and improved localization consistency.</li>
-                <li>Reached about 0.82 m ATE RMSE and 0.19 m RPE RMSE with evo trajectory evaluation.</li>
-              </ul>
+              <p class="project-copy">
+                Built a multi-sensor mobile robot pipeline for RGB-D SLAM, LiDAR
+                localization, and waypoint navigation in simulation with a custom
+                4-wheel differential drive controller.
+              </p>
             </article>
 
             <article class="project-card">
-              <div class="project-media tone-gold">
-                <span>3D Reconstruction</span>
-                <span>Drone Imagery</span>
-              </div>
-              <p class="project-date">Sep 2024 - Dec 2024</p>
               <h3>3D Reconstruction Using Autonomous Drone Imagery</h3>
               <p class="project-stack">ROS, OpenCV, PyTorch, COLMAP, Instant-NGP</p>
-              <ul>
-                <li>Developed an autonomous drone workflow to detect and circle target objects for multi-view image capture.</li>
-                <li>Built a 3D reconstruction pipeline with image-quality filtering, target cropping, and hash-grid optimization.</li>
-                <li>Focused on high-fidelity scene reconstruction from efficient viewpoint planning.</li>
-              </ul>
+              <p class="project-copy">
+                Developed an autonomous image-capture workflow and 3D reconstruction
+                pipeline for high-fidelity scene reconstruction from optimized drone
+                viewpoints.
+              </p>
             </article>
 
             <article class="project-card">
-              <div class="project-media tone-rose">
-                <span>VTOL Simulation</span>
-                <span>ArduPilot</span>
-              </div>
-              <p class="project-date">May 2025 - Aug 2025</p>
               <h3>GZ-Sim with ArduPilot for VTOL Simulation</h3>
               <p class="project-stack">Gazebo Harmonic, ROS2, ArduPilot, MAVROS</p>
-              <ul>
-                <li>Created a Gazebo Harmonic and ArduPilot SITL simulation framework for VTOL testing.</li>
-                <li>Integrated ROS2, MAVROS, and MAVLink for closed-loop autonomous flight workflows.</li>
-                <li>Executed waypoint missions in QGroundControl for simulated navigation and validation.</li>
-              </ul>
+              <p class="project-copy">
+                Created a VTOL simulation framework for autonomous flight testing,
+                waypoint missions, and closed-loop validation in simulated
+                environments.
+              </p>
             </article>
 
             <article class="project-card">
-              <div class="project-media tone-blue">
-                <span>Tracking</span>
-                <span>Sports Vision</span>
-              </div>
-              <p class="project-date">Oct 2024 - Dec 2024</p>
               <h3>AI-Powered Football Player Tracking and Analysis</h3>
               <p class="project-stack">PyTorch, OpenCV, YOLO, KMeans, Optical Flow</p>
-              <ul>
-                <li>Built a YOLOv8-based detection and tracking system for dynamic multi-class sports video.</li>
-                <li>Used KMeans clustering for team classification and optical flow for camera movement analysis.</li>
-                <li>Mapped image-space motion into real-world distance and velocity with perspective transformation.</li>
-              </ul>
+              <p class="project-copy">
+                Built a multi-class sports tracking pipeline for player detection,
+                motion analysis, team classification, and real-world movement
+                estimation from video.
+              </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="skills" class="section alt">
+      <section id="skills" class="section">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading compact">
             <p class="section-label">Skills</p>
             <h2>Technical toolkit</h2>
           </div>
@@ -277,9 +199,9 @@
         </div>
       </section>
 
-      <section id="education" class="section">
+      <section id="education" class="section alt">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading compact">
             <p class="section-label">Education</p>
             <h2>Academic background</h2>
           </div>
@@ -289,7 +211,6 @@
               <p class="edu-degree">Master of Science in Robotics</p>
               <p class="edu-meta">Twin Cities, Minnesota | Sept 2024 - May 2026</p>
               <p class="edu-meta">GPA: 3.78 / 4.0</p>
-              <p class="edu-meta">Coursework: Machine Learning, Intelligent Robotic Systems, Robot Vision, Deep Learning</p>
             </article>
             <article class="education-card">
               <h3>Jadavpur University</h3>
@@ -301,15 +222,11 @@
         </div>
       </section>
 
-      <section id="contact" class="section contact-section">
+      <section id="contact" class="section">
         <div class="container contact-layout">
           <div>
             <p class="section-label">Contact</p>
-            <h2>Let&apos;s connect.</h2>
-            <p class="body-copy">
-              I&apos;m interested in robotics engineering, autonomy, perception, and
-              research-driven product work.
-            </p>
+            <h2>Get in touch</h2>
           </div>
           <div class="contact-list">
             <a href="mailto:kuma0334@umn.edu">kuma0334@umn.edu</a>
