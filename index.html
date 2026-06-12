@@ -26,7 +26,7 @@
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Section navigation">
           <a href="#home">Home</a>
-          <a href="#about">About</a>
+          <a href="#featured-research">Research</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
@@ -38,7 +38,7 @@
 
     <main class="page-shell">
       <div class="container page-layout">
-        <aside id="home" class="profile-sidebar">
+        <aside class="profile-sidebar">
           <img
             class="profile-photo"
             src="IMG_0368.jpg"
@@ -46,61 +46,121 @@
           />
 
           <h1>Ankit Kumar</h1>
-          <p class="sidebar-role">Master's Student in Robotics at the University of Minnesota</p>
+          <p class="sidebar-role">MS Robotics<br />University of Minnesota</p>
 
           <div class="sidebar-links" aria-label="Profile links">
-            <a href="assets/Ankit_Kumar_Resume.pdf">Resume</a>
-            <a href="https://github.com/ankit24079" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/ankit2407" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="mailto:kuma0334@umn.edu">Email</a>
+            <a href="assets/Ankit_Kumar_Resume.pdf">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h7l5 5v13H7z"></path>
+                <path d="M14 3v6h6"></path>
+                <path d="M10 13h4"></path>
+                <path d="M10 17h4"></path>
+              </svg>
+              <span>Resume</span>
+            </a>
+            <a href="https://github.com/ankit24079" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.78.61-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.61.07-.61 1 .07 1.53 1.05 1.53 1.05.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.74 0 0 .85-.28 2.78 1.05A9.46 9.46 0 0 1 12 6.88c.85 0 1.71.12 2.51.35 1.92-1.33 2.77-1.05 2.77-1.05.55 1.43.2 2.48.1 2.74.64.72 1.03 1.63 1.03 2.75 0 3.92-2.33 4.78-4.56 5.04.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"></path>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/ankit2407" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12ZM5.6 9.75h2.68V18H5.6zm4.36 0h2.57v1.13h.04c.36-.68 1.23-1.4 2.53-1.4 2.7 0 3.2 1.82 3.2 4.18V18h-2.68v-3.86c0-.92-.02-2.1-1.25-2.1-1.25 0-1.44.99-1.44 2.03V18H9.96z"></path>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:kuma0334@umn.edu">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+              <span>Email</span>
+            </a>
           </div>
 
           <p class="sidebar-contact">kuma0334@umn.edu</p>
         </aside>
 
         <div class="content-column">
-          <section id="about" class="content-section">
+          <section id="home" class="content-section intro-section">
             <h2>About Me</h2>
             <p>
               I am a Master's student in Robotics at the University of Minnesota and a
-              Research Assistant in the Flow Field Imaging Laboratory, where I have
-              been working under the supervision of Professor Jiarong Hong since May
-              2025. My research lies at the intersection of robotics, computer vision,
-              perception, and autonomous systems, with a primary focus on wildfire
-              ember transport, drone-based sensing, stereo vision, and 3D
-              reconstruction.
+              <span class="text-highlight">Research Assistant in the Flow Field Imaging Laboratory</span>
+              under the supervision of
+              <span class="text-highlight">Professor Jiarong Hong</span>. My research
+              focuses on <span class="text-highlight">robotics perception</span>,
+              <span class="text-highlight">computer vision</span>, and
+              <span class="text-highlight">autonomous systems</span>, with an emphasis
+              on <span class="text-highlight">drone-based sensing</span> and
+              <span class="text-highlight">wildfire ember transport</span>.
             </p>
             <p>
-              My current research involves developing autonomous drone platforms
-              equipped with stereo cameras to capture and analyze airborne ember
-              transport in real-world wildfire environments. I design perception
-              pipelines for ember detection, tracking, triangulation, and 3D
-              trajectory reconstruction, while deploying computer vision models on
-              NVIDIA Jetson platforms for real-time operation. This work combines
-              robotics, environmental sensing, and AI to better understand wildfire
-              behavior and improve future monitoring capabilities.
+              My current work involves developing
+              <span class="text-highlight">autonomous drone platforms</span> equipped
+              with <span class="text-highlight">stereo vision systems</span> to detect,
+              track, and reconstruct
+              <span class="text-highlight">airborne ember trajectories in 3D</span>.
+              Through this research, I combine
+              <span class="text-highlight">robotics</span>,
+              <span class="text-highlight">computer vision</span>, and
+              <span class="text-highlight">AI</span> to better understand
+              <span class="text-highlight">wildfire behavior</span> and advance
+              <span class="text-highlight">autonomous environmental monitoring</span>.
             </p>
             <p>
-              Beyond my research, I have developed autonomous navigation and
-              perception systems using ROS2, RTAB-Map, Nav2, AMCL, LiDAR
-              localization, Isaac Sim, and Gazebo. My projects include SLAM,
-              autonomous mobile robot navigation, drone autonomy, embedded AI
-              deployment, and VTOL simulation using MAVROS and ArduPilot. I enjoy
-              building robotic systems end-to-end, from hardware integration and
-              sensor calibration to perception, autonomy, and deployment.
+              I am passionate about building
+              <span class="text-highlight">intelligent robotic systems</span> that
+              operate in the real world, with interests spanning
+              <span class="text-highlight">perception</span>,
+              <span class="text-highlight">autonomous navigation</span>,
+              <span class="text-highlight">drone robotics</span>, and
+              <span class="text-highlight">embodied AI</span>.
             </p>
-            <p>
-              Prior to joining the University of Minnesota, I worked as an Assistant
-              Manager at Jindal Steel &amp; Power from June 2022 to June 2024, where I
-              led engineering and industrial automation initiatives in a large-scale
-              manufacturing environment.
-            </p>
-            <p>
-              My long-term goal is to develop intelligent robotic systems that bridge
-              perception, autonomy, and real-world deployment, with a particular
-              interest in robotics perception, computer vision, SLAM, and autonomous
-              aerial systems.
-            </p>
+          </section>
+
+          <section id="featured-research" class="content-section research-section">
+            <h2>Featured Research</h2>
+
+            <div class="research-feature reveal-on-scroll">
+              <div class="research-image-wrap">
+                <img
+                  class="research-feature-image"
+                  src="IMG_2844.png"
+                  alt="Autonomous drone-based wildfire ember tracking research cover"
+                />
+                <div class="research-image-overlay"></div>
+              </div>
+
+              <div class="research-feature-copy">
+                <h3>Autonomous Drone-Based Wildfire Ember Tracking and 3D Reconstruction</h3>
+                <p class="research-summary">
+                  Developing autonomous drone-based stereo vision systems to detect,
+                  track, and reconstruct airborne wildfire ember trajectories in 3D.
+                  This work combines robotics, computer vision, and embedded AI to
+                  study wildfire ember transport and support autonomous environmental
+                  monitoring.
+                </p>
+                <div class="research-tags" aria-label="Research focus">
+                  <span>Robotics Perception</span>
+                  <span>Computer Vision</span>
+                  <span>Drone Autonomy</span>
+                  <span>Stereo Vision</span>
+                  <span>3D Reconstruction</span>
+                </div>
+                <div class="research-actions">
+                  <a class="research-button primary" href="#research-pipeline">View Research</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="research-pipeline"
+            class="content-section research-pipeline-placeholder reveal-on-scroll"
+          >
+            <h2>Research Pipeline (Coming Next)</h2>
           </section>
 
           <section id="experience" class="content-section">

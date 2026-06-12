@@ -2,7 +2,8 @@ const navLinks = document.querySelectorAll(".site-nav a");
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const profilePhoto = document.querySelector(".profile-photo");
-const sectionIds = ["home", "about", "experience", "projects", "skills", "education", "contact"];
+const revealNodes = document.querySelectorAll(".reveal-on-scroll");
+const sectionIds = ["home", "featured-research", "research-pipeline", "experience", "projects", "skills", "education", "contact"];
 const trackedSections = sectionIds
   .map((id) => document.getElementById(id))
   .filter(Boolean);
@@ -11,6 +12,27 @@ if (profilePhoto) {
   profilePhoto.addEventListener("error", () => {
     profilePhoto.style.display = "none";
   });
+}
+
+if (revealNodes.length > 0) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.18,
+      rootMargin: "0px 0px -8% 0px",
+    }
+  );
+
+  revealNodes.forEach((node) => revealObserver.observe(node));
 }
 
 function setActiveLink(targetId) {

@@ -71,11 +71,10 @@ h3 {
   align-items: center;
   gap: 8px;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
   border-radius: 20px;
-  background: rgba(32, 45, 57, 0.92);
-  box-shadow: 0 16px 38px rgba(9, 16, 23, 0.28);
-  backdrop-filter: blur(10px);
+  background: var(--bg);
+  box-shadow: 0 10px 24px rgba(31, 44, 57, 0.08);
 }
 
 .site-nav a {
@@ -85,7 +84,7 @@ h3 {
   min-height: 40px;
   padding: 0 14px;
   border-radius: 12px;
-  color: rgba(235, 242, 248, 0.78);
+  color: var(--muted);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.92rem;
   font-weight: 600;
@@ -97,8 +96,8 @@ h3 {
 
 .site-nav a:hover,
 .site-nav a.is-active {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  background: #edf1f4;
+  color: var(--heading);
 }
 
 .nav-toggle {
@@ -106,10 +105,10 @@ h3 {
   width: 48px;
   height: 48px;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
   border-radius: 16px;
-  background: rgba(32, 45, 57, 0.92);
-  box-shadow: 0 16px 38px rgba(9, 16, 23, 0.28);
+  background: var(--bg);
+  box-shadow: 0 10px 24px rgba(31, 44, 57, 0.08);
   cursor: pointer;
 }
 
@@ -119,7 +118,7 @@ h3 {
   height: 2px;
   margin: 4px auto;
   border-radius: 999px;
-  background: #ffffff;
+  background: var(--heading);
 }
 
 .page-shell {
@@ -128,8 +127,8 @@ h3 {
 
 .page-layout {
   display: grid;
-  grid-template-columns: 330px minmax(0, 1fr);
-  gap: 64px;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 48px;
   align-items: start;
 }
 
@@ -141,7 +140,7 @@ h3 {
 
 .profile-photo {
   width: 100%;
-  max-width: 265px;
+  max-width: 235px;
   margin: 0 auto 16px;
   aspect-ratio: 1 / 1.12;
   object-fit: cover;
@@ -152,15 +151,16 @@ h3 {
 
 .profile-sidebar h1 {
   margin-bottom: 8px;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
   line-height: 1.02;
 }
 
 .sidebar-role {
   margin: 0 auto 26px;
-  max-width: 18ch;
-  font-size: 0.95rem;
+  max-width: none;
+  font-size: 1.05rem;
   color: var(--heading);
+  white-space: nowrap;
 }
 
 .sidebar-links {
@@ -169,7 +169,49 @@ h3 {
   flex-wrap: wrap;
   gap: 14px;
   margin-bottom: 18px;
-  font-size: 0.95rem;
+  font-size: 1rem;
+}
+
+.sidebar-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #f8fafb;
+  color: var(--accent);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.sidebar-links a:hover {
+  background: #eef4f8;
+}
+
+.sidebar-links svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sidebar-links a:nth-child(2) svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.sidebar-links a:nth-child(3) svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.intro-section {
+  padding-top: 4px;
 }
 
 .sidebar-contact {
@@ -196,6 +238,152 @@ h3 {
 
 .content-section p {
   font-size: 1.06rem;
+}
+
+.text-highlight {
+  color: var(--heading);
+  font-weight: 700;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.research-section {
+  margin-bottom: 48px;
+}
+
+.research-feature {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.32fr) minmax(0, 0.68fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.research-image-wrap,
+.research-feature-copy {
+  min-width: 0;
+}
+
+.research-image-wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 270px;
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(24, 34, 44, 0.12);
+}
+
+.research-feature-image {
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+  object-fit: cover;
+}
+
+.research-image-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 15, 24, 0.12) 0%, rgba(8, 15, 24, 0.2) 100%),
+    linear-gradient(90deg, rgba(8, 15, 24, 0.2) 0%, rgba(8, 15, 24, 0.04) 100%);
+}
+
+.research-feature-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.research-feature-copy h3,
+.research-copy h3 {
+  margin-bottom: 14px;
+  color: var(--heading);
+  font-size: clamp(1.6rem, 2.45vw, 2.3rem);
+  line-height: 1.08;
+  max-width: 100%;
+  text-wrap: balance;
+}
+
+.research-summary {
+  color: var(--text);
+}
+
+.research-summary {
+  max-width: 100%;
+  margin: 0;
+  font-size: 1.03rem;
+  line-height: 1.76;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.research-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #f6f9fb;
+  color: var(--heading);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.research-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.research-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.research-button.primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.research-pipeline-placeholder {
+  padding: 36px 32px;
+  border: 1px dashed #b9c9d4;
+  border-radius: 22px;
+  background: rgba(248, 250, 252, 0.78);
+}
+
+.research-pipeline-placeholder h2 {
+  margin-bottom: 0;
 }
 
 .experience-item,
@@ -275,6 +463,10 @@ h3 {
   .profile-photo {
     max-width: 290px;
   }
+
+  .research-feature {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
@@ -330,6 +522,28 @@ h3 {
 
   .content-section h2 {
     font-size: clamp(1.9rem, 8vw, 2.5rem);
+  }
+
+  .sidebar-role {
+    white-space: normal;
+  }
+
+  .research-image-wrap {
+    min-height: 250px;
+    border-radius: 22px;
+  }
+
+  .research-feature-image {
+    min-height: 250px;
+  }
+
+  .research-feature-copy {
+    padding: 0;
+  }
+
+  .research-feature-copy h3 {
+    max-width: 100%;
+    font-size: clamp(1.55rem, 6.8vw, 2.05rem);
   }
 
   .experience-head {
