@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header class="site-header">
+      <div class="container topbar">
+        <a class="brand" href="#home">Ankit Kumar</a>
+        <nav class="top-nav" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+        </nav>
+      </div>
+    </header>
+
     <main class="page-shell">
       <div class="container page-layout">
         <aside class="profile-sidebar">
@@ -23,11 +36,6 @@
           <h1>Ankit Kumar</h1>
           <p class="sidebar-role">Master's Student in Robotics at the University of Minnesota</p>
 
-          <nav class="sidebar-nav" aria-label="Section links">
-            <a href="#projects">Highlight Projects</a>
-            <a href="#education">Education</a>
-          </nav>
-
           <div class="sidebar-links" aria-label="Profile links">
             <a href="assets/Ankit_Kumar_Resume.pdf">Resume</a>
             <a href="https://github.com/ankit24079" target="_blank" rel="noreferrer">GitHub</a>
@@ -39,7 +47,7 @@
         </aside>
 
         <div class="content-column">
-          <section id="about" class="content-section">
+          <section id="home" class="content-section">
             <h2>About Me</h2>
             <p>
               I am a Master's student in Robotics at the University of Minnesota and a
@@ -157,19 +165,57 @@
             </article>
           </section>
 
+          <section id="skills" class="content-section">
+            <h2>Skills</h2>
+
+            <article class="skills-item">
+              <h3>Programming</h3>
+              <p>Python, C++, MATLAB</p>
+            </article>
+
+            <article class="skills-item">
+              <h3>Robotics and Systems</h3>
+              <p>ROS, ROS2, Nav2, MAVROS, ArduPilot, Gazebo, NVIDIA Isaac Sim</p>
+            </article>
+
+            <article class="skills-item">
+              <h3>Perception and SLAM</h3>
+              <p>Stereo Vision, Visual SLAM, RTAB-Map, LiDAR Localization, Optical Flow</p>
+            </article>
+
+            <article class="skills-item">
+              <h3>Machine Learning and Deployment</h3>
+              <p>PyTorch, YOLO, CNNs, Jetson Orin Nano, TensorRT, 3D Reconstruction</p>
+            </article>
+          </section>
+
           <section id="education" class="content-section">
             <h2>Education</h2>
 
-            <article class="education-item">
-              <h3>University of Minnesota</h3>
-              <p>Master of Science in Robotics</p>
-              <p>Twin Cities, Minnesota | Sept 2024 - May 2026 | GPA: 3.78 / 4.0</p>
+            <article class="education-item with-logo">
+              <img
+                class="education-logo"
+                src="https://en.wikipedia.org/wiki/Special:FilePath/University%20of%20Minnesota%20Logo.svg"
+                alt="University of Minnesota logo"
+              />
+              <div>
+                <h3>University of Minnesota</h3>
+                <p>Master of Science in Robotics</p>
+                <p>Twin Cities, Minnesota | Sept 2024 - May 2026 | GPA: 3.78 / 4.0</p>
+              </div>
             </article>
 
-            <article class="education-item">
-              <h3>Jadavpur University</h3>
-              <p>Bachelor of Mechanical Engineering</p>
-              <p>Kolkata, India | Aug 2018 - May 2022 | GPA: 8.55 / 10</p>
+            <article class="education-item with-logo">
+              <img
+                class="education-logo"
+                src="https://en.wikipedia.org/wiki/Special:FilePath/Jadavpur%20University%20Wordmark%20Logo.svg"
+                alt="Jadavpur University logo"
+              />
+              <div>
+                <h3>Jadavpur University</h3>
+                <p>Bachelor of Mechanical Engineering</p>
+                <p>Kolkata, India | Aug 2018 - May 2022 | GPA: 8.55 / 10</p>
+              </div>
             </article>
           </section>
         </div>

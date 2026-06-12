@@ -1,5 +1,5 @@
 const sections = document.querySelectorAll("main section[id]");
-const navLinks = document.querySelectorAll(".sidebar-nav a");
+const navLinks = document.querySelectorAll(".top-nav a");
 const yearNode = document.getElementById("year");
 const profilePhoto = document.querySelector(".profile-photo");
 
