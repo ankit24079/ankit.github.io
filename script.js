@@ -1,7 +1,11 @@
-const sections = document.querySelectorAll("main section[id]");
-const navLinks = document.querySelectorAll(".section-rail a");
-const sectionMarker = document.querySelector(".section-marker");
+const navLinks = document.querySelectorAll(".site-nav a");
+const navToggle = document.querySelector(".nav-toggle");
+const siteNav = document.querySelector(".site-nav");
 const profilePhoto = document.querySelector(".profile-photo");
+const sectionIds = ["home", "about", "experience", "projects", "skills", "education", "contact"];
+const trackedSections = sectionIds
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
 
 if (profilePhoto) {
   profilePhoto.addEventListener("error", () => {
@@ -9,46 +13,49 @@ if (profilePhoto) {
   });
 }
 
-function updateMarker(link) {
-  if (!sectionMarker || !link) {
+function setActiveLink(targetId) {
+  navLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.getAttribute("href") === `#${targetId}`);
+  });
+}
+
+if (navToggle && siteNav) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = siteNav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
+
+function updateActiveSection() {
+  if (trackedSections.length === 0) {
     return;
   }
 
-  const offset = link.offsetTop - 14;
-  sectionMarker.style.transform = `translateY(${offset}px)`;
-  sectionMarker.style.height = `${link.offsetHeight}px`;
+  const scrollPosition = window.scrollY + 140;
+  let activeId = trackedSections[0].id;
+
+  trackedSections.forEach((section) => {
+    if (section.offsetTop <= scrollPosition) {
+      activeId = section.id;
+    }
+  });
+
+  setActiveLink(activeId);
 }
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-      navLinks.forEach((link) => {
-        const isActive = link.getAttribute("href") === `#${entry.target.id}`;
-        link.classList.toggle("is-active", isActive);
-
-        if (isActive) {
-          updateMarker(link);
-        }
-      });
-    });
-  },
-  {
-    rootMargin: "-35% 0px -45% 0px",
-    threshold: 0.1,
-  }
-);
-
-sections.forEach((section) => observer.observe(section));
 
 if (navLinks.length > 0) {
-  updateMarker(navLinks[0]);
+  setActiveLink("home");
 }
 
-window.addEventListener("resize", () => {
-  const activeLink = document.querySelector(".section-rail a.is-active") || navLinks[0];
-  updateMarker(activeLink);
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (siteNav && navToggle && siteNav.classList.contains("is-open")) {
+      siteNav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
 });
+
+window.addEventListener("scroll", updateActiveSection, { passive: true });
+window.addEventListener("resize", updateActiveSection);
+updateActiveSection();
