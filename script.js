@@ -1,5 +1,5 @@
 const sections = document.querySelectorAll("main section[id]");
-const navLinks = document.querySelectorAll(".site-nav a");
+const navLinks = document.querySelectorAll(".site-nav a, .sidebar-nav a");
 const yearNode = document.getElementById("year");
 const profilePhoto = document.querySelector(".profile-photo");
 
@@ -9,12 +9,7 @@ if (yearNode) {
 
 if (profilePhoto) {
   profilePhoto.addEventListener("error", () => {
-    profilePhoto.closest(".portrait")?.classList.add("is-empty");
-    profilePhoto.remove();
-  });
-
-  profilePhoto.addEventListener("load", () => {
-    profilePhoto.closest(".portrait")?.classList.remove("is-empty");
+    profilePhoto.style.display = "none";
   });
 }
 

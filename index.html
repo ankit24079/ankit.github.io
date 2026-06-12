@@ -11,271 +11,189 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="#about">Ankit Kumar</a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="#about">About Me</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
     <main class="page-shell">
       <div class="container page-layout">
         <aside class="profile-sidebar">
-          <div class="sidebar-card">
-            <div class="portrait-frame">
-              <img
-                class="profile-photo"
-                src="IMG_0368.jpg"
-                alt="Portrait of Ankit Kumar"
-              />
-            </div>
+          <img
+            class="profile-photo"
+            src="IMG_0368.jpg"
+            alt="Portrait of Ankit Kumar"
+          />
 
-            <div class="sidebar-copy">
-              <h1>Ankit Kumar</h1>
-              <p class="sidebar-role">
-                Master's Student in Robotics
-                <span>University of Minnesota Twin Cities</span>
-              </p>
-            </div>
+          <h1>Ankit Kumar</h1>
+          <p class="sidebar-role">Master's Student in Robotics at the University of Minnesota</p>
 
-            <nav class="sidebar-nav" aria-label="Section links">
-              <a href="#about">About Me</a>
-              <a href="#experience">Experience</a>
-              <a href="#projects">Projects</a>
-              <a href="#skills">Skills</a>
-              <a href="#education">Education</a>
-            </nav>
+          <nav class="sidebar-nav" aria-label="Section links">
+            <a href="#experience">Experience</a>
+            <a href="#projects">Highlight Projects</a>
+            <a href="#education">Education</a>
+          </nav>
 
-            <div class="sidebar-links">
-              <a class="link-pill emphasis" href="assets/Ankit_Kumar_Resume.pdf">Resume</a>
-              <a class="link-pill" href="mailto:kuma0334@umn.edu">Email</a>
-              <a
-                class="link-pill"
-                href="https://github.com/ankit24079"
-                target="_blank"
-                rel="noreferrer"
-                >GitHub</a
-              >
-              <a
-                class="link-pill"
-                href="https://www.linkedin.com/in/ankit2407"
-                target="_blank"
-                rel="noreferrer"
-                >LinkedIn</a
-              >
-            </div>
-
-            <div class="sidebar-contact" id="contact">
-              <p>kuma0334@umn.edu</p>
-              <p>+1 (763) 900-0462</p>
-              <p>Saint Paul, Minnesota</p>
-            </div>
+          <div class="sidebar-links" aria-label="Profile links">
+            <a href="assets/Ankit_Kumar_Resume.pdf">Resume</a>
+            <a href="https://github.com/ankit24079" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/ankit2407" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="mailto:kuma0334@umn.edu">Email</a>
           </div>
+
+          <p class="sidebar-contact">kuma0334@umn.edu</p>
         </aside>
 
         <div class="content-column">
           <section id="about" class="content-section">
-            <div class="section-heading">
-              <p class="section-label">About Me</p>
-              <h2>Research in robotics, perception, and autonomous systems</h2>
-            </div>
-            <div class="prose-card">
-              <p>
-                I am a Master's student in Robotics at the University of Minnesota
-                and a Research Assistant in the Flow Field Imaging Laboratory, where
-                I have been working under the supervision of Professor Jiarong Hong
-                since May 2025. My research lies at the intersection of robotics,
-                computer vision, perception, and autonomous systems, with a primary
-                focus on wildfire ember transport, drone-based sensing, stereo vision,
-                and 3D reconstruction.
-              </p>
-              <p>
-                My current research involves developing autonomous drone platforms
-                equipped with stereo cameras to capture and analyze airborne ember
-                transport in real-world wildfire environments. I design perception
-                pipelines for ember detection, tracking, triangulation, and 3D
-                trajectory reconstruction, while deploying computer vision models on
-                NVIDIA Jetson platforms for real-time operation. This work combines
-                robotics, environmental sensing, and AI to better understand wildfire
-                behavior and improve future monitoring capabilities.
-              </p>
-              <p>
-                Beyond my research, I have developed autonomous navigation and
-                perception systems using ROS2, RTAB-Map, Nav2, AMCL, LiDAR
-                localization, Isaac Sim, and Gazebo. My projects include SLAM,
-                autonomous mobile robot navigation, drone autonomy, embedded AI
-                deployment, and VTOL simulation using MAVROS and ArduPilot. I enjoy
-                building robotic systems end-to-end, from hardware integration and
-                sensor calibration to perception, autonomy, and deployment.
-              </p>
-              <p>
-                Prior to joining the University of Minnesota, I worked as an
-                Assistant Manager at Jindal Steel &amp; Power from June 2022 to June
-                2024, where I led engineering and industrial automation initiatives
-                in a large-scale manufacturing environment.
-              </p>
-              <p>
-                My long-term goal is to develop intelligent robotic systems that
-                bridge perception, autonomy, and real-world deployment, with a
-                particular interest in robotics perception, computer vision, SLAM,
-                and autonomous aerial systems.
-              </p>
-            </div>
+            <h2>About Me</h2>
+            <p>
+              I am a Master's student in Robotics at the University of Minnesota and a
+              Research Assistant in the Flow Field Imaging Laboratory, where I have
+              been working under the supervision of Professor Jiarong Hong since May
+              2025. My research lies at the intersection of robotics, computer vision,
+              perception, and autonomous systems, with a primary focus on wildfire
+              ember transport, drone-based sensing, stereo vision, and 3D
+              reconstruction.
+            </p>
+            <p>
+              My current research involves developing autonomous drone platforms
+              equipped with stereo cameras to capture and analyze airborne ember
+              transport in real-world wildfire environments. I design perception
+              pipelines for ember detection, tracking, triangulation, and 3D
+              trajectory reconstruction, while deploying computer vision models on
+              NVIDIA Jetson platforms for real-time operation. This work combines
+              robotics, environmental sensing, and AI to better understand wildfire
+              behavior and improve future monitoring capabilities.
+            </p>
+            <p>
+              Beyond my research, I have developed autonomous navigation and
+              perception systems using ROS2, RTAB-Map, Nav2, AMCL, LiDAR
+              localization, Isaac Sim, and Gazebo. My projects include SLAM,
+              autonomous mobile robot navigation, drone autonomy, embedded AI
+              deployment, and VTOL simulation using MAVROS and ArduPilot. I enjoy
+              building robotic systems end-to-end, from hardware integration and
+              sensor calibration to perception, autonomy, and deployment.
+            </p>
+            <p>
+              Prior to joining the University of Minnesota, I worked as an Assistant
+              Manager at Jindal Steel &amp; Power from June 2022 to June 2024, where I
+              led engineering and industrial automation initiatives in a large-scale
+              manufacturing environment.
+            </p>
+            <p>
+              My long-term goal is to develop intelligent robotic systems that bridge
+              perception, autonomy, and real-world deployment, with a particular
+              interest in robotics perception, computer vision, SLAM, and autonomous
+              aerial systems.
+            </p>
           </section>
 
           <section id="experience" class="content-section">
-            <div class="section-heading">
-              <p class="section-label">Experience</p>
-              <h2>Research and engineering experience</h2>
-            </div>
+            <h2>Experience</h2>
 
-            <div class="stack-list">
-              <article class="detail-card">
-                <div class="detail-top">
-                  <div>
-                    <h3>Research Assistant</h3>
-                    <p class="detail-org">Flow Field Imaging Laboratory, University of Minnesota</p>
-                  </div>
-                  <p class="detail-meta">May 2025 - Present</p>
-                </div>
-                <p class="detail-copy">
-                  Working on autonomous drone platforms, stereo vision perception,
-                  ember tracking, triangulation, and real-time deployment of
-                  computer vision pipelines on NVIDIA Jetson systems.
-                </p>
-                <ul class="detail-list">
-                  <li>Designed perception pipelines for ember detection, tracking, and 3D trajectory reconstruction.</li>
-                  <li>Built embedded AI workflows for real-time robotics deployment on Jetson platforms.</li>
-                  <li>Integrated sensing, autonomy, and outdoor experimentation for wildfire-related research.</li>
-                </ul>
-              </article>
+            <article class="experience-item">
+              <div class="experience-head">
+                <h3>Research Assistant</h3>
+                <p>May 2025 - Present</p>
+              </div>
+              <p class="experience-org">Flow Field Imaging Laboratory, University of Minnesota</p>
+              <p>
+                Working on autonomous drone platforms, stereo vision perception,
+                ember tracking, triangulation, and real-time deployment of computer
+                vision pipelines on NVIDIA Jetson systems.
+              </p>
+            </article>
 
-              <article class="detail-card">
-                <div class="detail-top">
-                  <div>
-                    <h3>Assistant Manager</h3>
-                    <p class="detail-org">Jindal Steel &amp; Power</p>
-                  </div>
-                  <p class="detail-meta">June 2022 - June 2024</p>
-                </div>
-                <p class="detail-copy">
-                  Led engineering and industrial automation initiatives in a
-                  large-scale manufacturing environment, with hands-on work across
-                  systems, operations, and technical execution.
-                </p>
-              </article>
-            </div>
+            <article class="experience-item">
+              <div class="experience-head">
+                <h3>Assistant Manager</h3>
+                <p>June 2022 - June 2024</p>
+              </div>
+              <p class="experience-org">Jindal Steel &amp; Power</p>
+              <p>
+                Led engineering and industrial automation initiatives in a large-scale
+                manufacturing environment, with hands-on work across systems,
+                operations, and technical execution.
+              </p>
+            </article>
           </section>
 
           <section id="projects" class="content-section">
-            <div class="section-heading">
-              <p class="section-label">Projects</p>
-              <h2>Selected work</h2>
-            </div>
+            <h2>Highlight Projects</h2>
 
-            <div class="card-grid">
-              <article class="info-card">
-                <h3>Autonomous Mobile Robot Navigation and SLAM in Isaac Sim</h3>
-                <p class="card-tag">ROS2, RTAB-Map, Nav2, LiDAR, Isaac Sim</p>
-                <p>
-                  Built a multi-sensor mobile robot pipeline for RGB-D SLAM, LiDAR
-                  localization, and waypoint navigation in simulation.
-                </p>
-              </article>
+            <article class="project-item">
+              <h3>Autonomous Mobile Robot Navigation and SLAM in Isaac Sim</h3>
+              <p class="project-skills">ROS2, RTAB-Map, Nav2, LiDAR, Isaac Sim</p>
+              <p>
+                Built a multi-sensor mobile robot pipeline for RGB-D SLAM, LiDAR
+                localization, and waypoint navigation in simulation.
+              </p>
+            </article>
 
-              <article class="info-card">
-                <h3>3D Reconstruction Using Autonomous Drone Imagery</h3>
-                <p class="card-tag">ROS, OpenCV, PyTorch, COLMAP, Instant-NGP</p>
-                <p>
-                  Developed an autonomous image-capture workflow and 3D
-                  reconstruction pipeline for high-fidelity scene modeling.
-                </p>
-              </article>
+            <article class="project-item">
+              <h3>3D Reconstruction Using Autonomous Drone Imagery</h3>
+              <p class="project-skills">ROS, OpenCV, PyTorch, COLMAP, Instant-NGP</p>
+              <p>
+                Developed an autonomous image-capture workflow and 3D reconstruction
+                pipeline for high-fidelity scene modeling.
+              </p>
+            </article>
 
-              <article class="info-card">
-                <h3>VTOL Simulation with Gazebo and ArduPilot</h3>
-                <p class="card-tag">Gazebo Harmonic, ROS2, ArduPilot, MAVROS</p>
-                <p>
-                  Created a VTOL simulation framework for autonomous flight testing,
-                  waypoint missions, and closed-loop validation.
-                </p>
-              </article>
+            <article class="project-item">
+              <h3>VTOL Simulation with Gazebo and ArduPilot</h3>
+              <p class="project-skills">Gazebo Harmonic, ROS2, ArduPilot, MAVROS</p>
+              <p>
+                Created a VTOL simulation framework for autonomous flight testing,
+                waypoint missions, and closed-loop validation.
+              </p>
+            </article>
 
-              <article class="info-card">
-                <h3>AI-Powered Football Player Tracking and Analysis</h3>
-                <p class="card-tag">PyTorch, OpenCV, YOLO, Optical Flow</p>
-                <p>
-                  Built a sports tracking pipeline for player detection, team
-                  classification, motion analysis, and movement estimation.
-                </p>
-              </article>
-            </div>
+            <article class="project-item">
+              <h3>AI-Powered Football Player Tracking and Analysis</h3>
+              <p class="project-skills">PyTorch, OpenCV, YOLO, Optical Flow</p>
+              <p>
+                Built a sports tracking pipeline for player detection, team
+                classification, motion analysis, and movement estimation.
+              </p>
+            </article>
           </section>
 
           <section id="skills" class="content-section">
-            <div class="section-heading">
-              <p class="section-label">Skills</p>
-              <h2>Technical toolkit</h2>
-            </div>
-
-            <div class="card-grid compact-grid">
-              <article class="info-card">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+              <div>
                 <h3>Programming</h3>
                 <p>Python, C++, MATLAB</p>
-              </article>
-              <article class="info-card">
+              </div>
+              <div>
                 <h3>Robotics and Systems</h3>
                 <p>ROS, ROS2, Nav2, MAVROS, ArduPilot, Gazebo, NVIDIA Isaac Sim</p>
-              </article>
-              <article class="info-card">
+              </div>
+              <div>
                 <h3>Perception and SLAM</h3>
                 <p>Stereo Vision, Visual SLAM, RTAB-Map, LiDAR Localization, Optical Flow</p>
-              </article>
-              <article class="info-card">
+              </div>
+              <div>
                 <h3>Machine Learning and Deployment</h3>
                 <p>PyTorch, YOLO, CNNs, Jetson Orin Nano, TensorRT, 3D Reconstruction</p>
-              </article>
+              </div>
             </div>
           </section>
 
           <section id="education" class="content-section">
-            <div class="section-heading">
-              <p class="section-label">Education</p>
-              <h2>Academic background</h2>
-            </div>
+            <h2>Education</h2>
 
-            <div class="card-grid compact-grid">
-              <article class="info-card">
-                <h3>University of Minnesota</h3>
-                <p class="card-tag">Master of Science in Robotics</p>
-                <p>Twin Cities, Minnesota</p>
-                <p>Sept 2024 - May 2026 · GPA: 3.78 / 4.0</p>
-              </article>
-              <article class="info-card">
-                <h3>Jadavpur University</h3>
-                <p class="card-tag">Bachelor of Mechanical Engineering</p>
-                <p>Kolkata, India</p>
-                <p>Aug 2018 - May 2022 · GPA: 8.55 / 10</p>
-              </article>
-            </div>
+            <article class="education-item">
+              <h3>University of Minnesota</h3>
+              <p>Master of Science in Robotics</p>
+              <p>Twin Cities, Minnesota | Sept 2024 - May 2026 | GPA: 3.78 / 4.0</p>
+            </article>
+
+            <article class="education-item">
+              <h3>Jadavpur University</h3>
+              <p>Bachelor of Mechanical Engineering</p>
+              <p>Kolkata, India | Aug 2018 - May 2022 | GPA: 8.55 / 10</p>
+            </article>
           </section>
         </div>
       </div>
     </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© <span id="year"></span> Ankit Kumar</p>
-        <p>Robotics Portfolio</p>
-      </div>
-    </footer>
 
     <script src="script.js"></script>
   </body>
