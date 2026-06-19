@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airborne Wildfire Ember Tracking | Ankit Kumar</title>
+    <meta
+      name="description"
+      content="Airborne Wildfire Ember Tracking and Autonomous Drone Perception research page."
+    />
+    <link rel="stylesheet" href="research.css" />
+  </head>
+  <body>
+    <header class="research-header">
+      <div class="shell header-row">
+        <a class="back-link" href="index.html#featured-research">Back to Home</a>
+        <nav class="research-nav" aria-label="Research sections">
+          <a href="#hardware">Hardware</a>
+          <a href="#pipeline">Pipeline</a>
+          <a href="#reconstruction">3D</a>
+          <a href="#velocity">Velocity</a>
+          <a href="#contributions">Contributions</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero reveal-on-scroll">
+        <p class="eyebrow">Featured Research</p>
+        <h1>Airborne Wildfire Ember Tracking and Autonomous Drone Perception</h1>
+        <p class="hero-subtitle">
+          From stereo ember detection to 3D trajectory reconstruction and
+          drone-following control.
+        </p>
+        <p class="hero-intro">
+          This project develops a drone-based stereo vision system to detect
+          airborne wildfire embers, reconstruct their 3D trajectories, analyze
+          how their velocity changes with height, and use that motion
+          information to guide autonomous drone following for longer-range ember
+          observation.
+        </p>
+      </section>
+
+      <section id="hardware" class="story-section reveal-on-scroll">
+        <div class="section-heading">
+          <p class="eyebrow">1. Hardware and Data Collection</p>
+          <h2>Drone platform for airborne ember sensing</h2>
+        </div>
+        <div class="story-grid media-left">
+          <figure class="image-card">
+            <button
+              class="lightbox-trigger image-button"
+              type="button"
+              data-src="drone.png"
+              data-alt="Drone platform with GPS and stereo vision camera for airborne ember sensing"
+            >
+              <img
+                src="drone.png"
+                alt="Drone platform with GPS and stereo vision camera for airborne ember sensing"
+              />
+            </button>
+            <figcaption>
+              Drone platform with GPS and stereo vision camera for airborne ember
+              sensing.
+            </figcaption>
+          </figure>
+          <div class="story-copy card">
+            <p>
+              A UAV platform was equipped with GPS and a stereo vision camera to
+              capture ember motion from the air. The goal is to move from
+              fixed-camera observation toward mobile drone-based ember tracking.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pipeline" class="story-section reveal-on-scroll">
+        <div class="section-heading">
+          <p class="eyebrow">2. Perception Pipeline</p>
+          <h2>From image stream to motion-informed autonomy</h2>
+        </div>
+        <div class="card">
+          <div class="pipeline" aria-label="Perception pipeline">
+            <span>Stereo Image Capture</span>
+            <span>Ember Detection</span>
+            <span>Tracking</span>
+            <span>Stereo Matching</span>
+            <span>Triangulation</span>
+            <span>3D Trajectory Reconstruction</span>
+            <span>Velocity Analysis</span>
+            <span>Drone Following</span>
+          </div>
+          <p class="section-text">
+            The image stream is processed to detect ember streaks, associate
+            detections across frames, match left and right stereo observations,
+            and triangulate 3D ember positions before extracting motion cues for
+            autonomous following.
+          </p>
+        </div>
+      </section>
+
+      <section class="story-section reveal-on-scroll">
+        <div class="section-heading">
+          <p class="eyebrow">3. Synthetic Data and Model Training</p>
+          <h2>Improving robustness in low-light wildfire scenes</h2>
+        </div>
+        <div class="story-grid media-right">
+          <div class="story-copy card">
+            <p>
+              Synthetic ember images were generated to increase training
+              diversity and improve detection robustness in low-light wildfire
+              scenes. Augmentations included rotation, flipping, brightness
+              variation, color shifts, and synthetic ember insertion.
+            </p>
+          </div>
+          <figure class="image-card">
+            <button
+              class="lightbox-trigger image-button"
+              type="button"
+              data-src="merged_vertical.png"
+              data-alt="Synthetic ember imagery used for model training"
+            >
+              <img
+                src="merged_vertical.png"
+                alt="Synthetic ember imagery used for model training"
+              />
+            </button>
+            <figcaption>Synthetic ember imagery used to expand training diversity.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="detection" class="story-section reveal-on-scroll">
+        <div class="section-heading">
+          <p class="eyebrow">4. Ember Detection</p>
+          <h2>Detecting ember regions and endpoints</h2>
+        </div>
+        <div class="story-grid media-left">
+          <figure class="image-card">
+            <button
+              class="lightbox-trigger image-button"
+              type="button"
+              data-src="final_precision_with_mask14.png"
+              data-alt="Detection model output with ember mask and endpoint prediction"
+            >
+              <img
+                src="final_precision_with_mask14.png"
+                alt="Detection model output with ember mask and endpoint prediction"
+              />
+            </button>
+            <figcaption>
+              Detection output showing ember regions and endpoint predictions.
+            </figcaption>
+          </figure>
+          <div class="story-copy card">
+            <p>
+              The detection model predicts ember regions and endpoint locations
+              from low-light frames. These detections provide the input for
+              tracking and stereo reconstruction.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-section reveal-on-scroll">
+        <div class="section-heading">
+          <p class="eyebrow">5. Tracking and Stereo Matching</p>
+          <h2>Associating motion through time and across cameras</h2>
+        </div>
+        <div class="dual-media">
+          <div class="card">
+            <figure class="image-card compact">
+              <button
+                class="lightbox-trigger image-button"
+                type="button"
+                data-src="ember_tracking_fixed.gif"
+                data-alt="Animated multi-object ember tracking result"
+              >
+                <img
+                  src="ember_tracking_fixed.gif"
+                  alt="Animated multi-object ember tracking result"
+                />
+              </button>
+              <figcaption>Tracking result showing ember motion across frames.</figcaption>
+            </figure>
+            <p class="section-text">
+              Detected embers are temporally associated across frames to form
+              motion tracks.
+            </p>
+          </div>
+          <div class="card">
+            <figure class="image-card compact">
+              <button
+                class="lightbox-trigger image-button"
+                type="button"
+                data-src="high_res_matching_vis.png"
+                data-alt="Stereo matching result across left and right views"
+              >
+                <img
+                  src="high_res_matching_vis.png"
+                  alt="Stereo matching result across left and right views"
+                />
+              </button>
+              <figcaption>
+                Stereo matching pairs corresponding ember observations.
+              </figcaption>
+            </figure>
+            <p class="section-text">
+              Stereo matching then pairs corresponding ember observations
+              between camera views before triangulation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="reconstruction" class="story-section reveal-on-scroll">
+        <div class="section-heading">
+          <p class="eyebrow">6. 3D Trajectory Reconstruction</p>
+          <h2>Recovering ember motion in 3D space</h2>
+        </div>
+        <div class="story-grid reconstruction-layout">
+          <div class="reconstruction-side">
+            <div class="story-copy card">
+              <p>
+                Matched stereo observations are triangulated into 3D space,
+                producing ember trajectories that reveal how embers rise,
+                spread, and move through the flow field.
+              </p>
+            </div>
+            <div class="dual-media reconstruction-pair">
+              <figure class="image-card compact">
+                <button
+                  class="lightbox-trigger image-button"
+                  type="button"
+                  data-src="ember_3d_zoom_preview_custom.png"
+                  data-alt="3D ember trajectory preview"
+                >
+                  <img
+                    src="ember_3d_zoom_preview_custom.png"
+                    alt="3D ember trajectory preview"
+                  />
+                </button>
+                <figcaption>Preview of reconstructed ember trajectory structure.</figcaption>
+              </figure>
+              <figure class="image-card compact">
+                <button
+                  class="lightbox-trigger image-button"
+                  type="button"
+                  data-src="ember_smooth.png"
+                  data-alt="Smoothed 3D ember trajectory reconstruction"
+                >
+                  <img
+                    src="ember_smooth.png"
+                    alt="Smoothed 3D ember trajectory reconstruction"
+                  />
+                </button>
+                <figcaption>Smoothed 3D trajectories used for transport analysis.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="reconstruction-main">
+            <figure class="image-card featured">
+              <button
+                class="lightbox-trigger image-button"
+                type="button"
+                data-src="ember_3d_zoom_first50_custom.gif"
+                data-alt="Animated 3D ember trajectory reconstruction"
+              >
+                <img
+                  src="ember_3d_zoom_first50_custom.gif"
+                  alt="Animated 3D ember trajectory reconstruction"
+                />
+              </button>
+              <figcaption>
+                Animated 3D reconstruction showing ember motion through space.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="velocity" class="story-section reveal-on-scroll">
+        <div class="section-heading">
+          <p class="eyebrow">7. Velocity Analysis and Drone Following</p>
+          <h2>Using height-dependent motion to guide autonomous following</h2>
+        </div>
+        <div class="story-grid media-left">
+          <figure class="image-card featured">
+            <button
+              class="lightbox-trigger image-button"
+              type="button"
+              data-src="vertical_and_total_velocity_by_height_bin.png"
+              data-alt="Vertical and resultant ember velocity variation with height"
+            >
+              <img
+                src="vertical_and_total_velocity_by_height_bin.png"
+                alt="Vertical and resultant ember velocity variation with height"
+              />
+            </button>
+            <figcaption>
+              Vertical and resultant ember velocity variation with height, used
+              to guide drone-following behavior.
+            </figcaption>
+          </figure>
+          <div class="story-copy card">
+            <p>
+              After reconstructing ember trajectories, vertical velocity and
+              resultant velocity were evaluated as a function of height. This
+              helps identify how ember motion changes through the transport
+              layer, including regions where particles accelerate or maintain
+              stronger upward motion.
+            </p>
+            <p>
+              The velocity profile is important because it gives a reference for
+              how fast the drone should move vertically to keep embers in view.
+              Initial autonomous tests used onboard perception and offboard
+              control to command the drone to follow a detected target,
+              validating the foundation for future ember-following experiments.
+            </p>
+            <ul class="focus-list">
+              <li>Velocity analysis informs vertical drone motion</li>
+              <li>Perception output provides target location and motion cues</li>
+              <li>Drone follows the target in offboard or autonomous mode</li>
+              <li>Goal is to capture longer ember trajectories from the air</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contributions" class="story-section reveal-on-scroll">
+        <div class="section-heading">
+          <p class="eyebrow">8. Key Contributions</p>
+          <h2>Core project outcomes</h2>
+        </div>
+        <div class="contribution-grid">
+          <article class="mini-card">Built drone-based stereo sensing platform</article>
+          <article class="mini-card">Generated synthetic ember training data</article>
+          <article class="mini-card">Developed detection and tracking pipeline</article>
+          <article class="mini-card">Performed stereo matching and triangulation</article>
+          <article class="mini-card">Reconstructed 3D ember trajectories</article>
+          <article class="mini-card">Analyzed vertical and resultant velocity with height</article>
+          <article class="mini-card">
+            Connected velocity analysis to autonomous drone-following control
+          </article>
+        </div>
+      </section>
+
+      <section class="story-section reveal-on-scroll">
+        <div class="section-heading">
+          <p class="eyebrow">9. Tools and Technologies</p>
+          <h2>Implementation stack</h2>
+        </div>
+        <div class="tag-list" aria-label="Tools and technologies">
+          <span>Python</span>
+          <span>C++</span>
+          <span>PyTorch</span>
+          <span>OpenCV</span>
+          <span>ROS2</span>
+          <span>Jetson Orin Nano</span>
+          <span>Stereo Vision</span>
+          <span>Tracking</span>
+          <span>Triangulation</span>
+          <span>3D Reconstruction</span>
+          <span>Velocity Analysis</span>
+          <span>MAVROS</span>
+          <span>ArduPilot</span>
+          <span>Gazebo</span>
+        </div>
+      </section>
+
+      <div class="bottom-action reveal-on-scroll">
+        <a class="back-link" href="index.html#featured-research">Back to Home</a>
+      </div>
+    </main>
+
+    <div class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close image">Close</button>
+      <div class="lightbox-stage">
+        <img class="lightbox-media" src="" alt="" />
+      </div>
+    </div>
+
+    <script src="research.js"></script>
+  </body>
+</html>
