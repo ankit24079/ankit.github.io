@@ -8,19 +8,49 @@
       name="description"
       content="Airborne Wildfire Ember Tracking and Autonomous Drone Perception research page."
     />
+    <script>
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
     <link rel="stylesheet" href="research.css" />
   </head>
   <body>
     <header class="research-header">
       <div class="shell header-row">
         <a class="back-link" href="index.html#featured-research">Back to Home</a>
-        <nav class="research-nav" aria-label="Research sections">
-          <a href="#hardware">Hardware</a>
-          <a href="#pipeline">Pipeline</a>
-          <a href="#reconstruction">3D</a>
-          <a href="#velocity">Velocity</a>
-          <a href="#contributions">Contributions</a>
-        </nav>
+        <div class="research-header-actions">
+          <nav class="research-nav" aria-label="Research sections">
+            <a href="#hardware">Hardware</a>
+            <a href="#pipeline">Pipeline</a>
+            <a href="#reconstruction">3D</a>
+            <a href="#velocity">Velocity</a>
+            <a href="#contributions">Contributions</a>
+          </nav>
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+          >
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4V2"></path>
+              <path d="M12 22v-2"></path>
+              <path d="m4.93 4.93-1.41-1.41"></path>
+              <path d="m20.48 20.48-1.41-1.41"></path>
+              <path d="M4 12H2"></path>
+              <path d="M22 12h-2"></path>
+              <path d="m4.93 19.07-1.41 1.41"></path>
+              <path d="m20.48 3.52-1.41 1.41"></path>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 14.3A7.7 7.7 0 0 1 9.7 3 8.5 8.5 0 1 0 21 14.3Z"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -173,13 +203,13 @@
               <button
                 class="lightbox-trigger image-button"
                 type="button"
-                data-src="ember_tracking_fixed.gif"
+                data-src="ember_tracking_fixed.mp4"
+                data-type="video"
                 data-alt="Animated multi-object ember tracking result"
               >
-                <img
-                  src="ember_tracking_fixed.gif"
-                  alt="Animated multi-object ember tracking result"
-                />
+                <video autoplay loop muted playsinline preload="auto" aria-label="Animated multi-object ember tracking result">
+                  <source src="ember_tracking_fixed.mp4" type="video/mp4" />
+                </video>
               </button>
               <figcaption>Tracking result showing ember motion across frames.</figcaption>
             </figure>
@@ -263,13 +293,13 @@
               <button
                 class="lightbox-trigger image-button"
                 type="button"
-                data-src="ember_3d_zoom_first50_custom.gif"
+                data-src="ember_3d_zoom_first50_custom.mp4"
+                data-type="video"
                 data-alt="Animated 3D ember trajectory reconstruction"
               >
-                <img
-                  src="ember_3d_zoom_first50_custom.gif"
-                  alt="Animated 3D ember trajectory reconstruction"
-                />
+                <video autoplay loop muted playsinline preload="auto" aria-label="Animated 3D ember trajectory reconstruction">
+                  <source src="ember_3d_zoom_first50_custom.mp4" type="video/mp4" />
+                </video>
               </button>
               <figcaption>
                 Animated 3D reconstruction showing ember motion through space.
@@ -377,6 +407,9 @@
       <button class="lightbox-close" type="button" aria-label="Close image">Close</button>
       <div class="lightbox-stage">
         <img class="lightbox-media" src="" alt="" />
+        <video class="lightbox-video" controls loop playsinline hidden>
+          <source src="" type="video/mp4" />
+        </video>
       </div>
     </div>
 

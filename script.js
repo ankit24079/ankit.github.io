@@ -1,12 +1,34 @@
 const navLinks = document.querySelectorAll(".site-nav a");
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
+const themeToggle = document.querySelector(".theme-toggle");
 const profilePhoto = document.querySelector(".profile-photo");
 const revealNodes = document.querySelectorAll(".reveal-on-scroll");
 const sectionIds = ["home", "featured-research", "research-pipeline", "experience", "projects", "skills", "education", "contact"];
 const trackedSections = sectionIds
   .map((id) => document.getElementById(id))
   .filter(Boolean);
+
+function setTheme(theme) {
+  const isDark = theme === "dark";
+  document.documentElement.dataset.theme = isDark ? "dark" : "light";
+
+  if (themeToggle) {
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  }
+}
+
+if (themeToggle) {
+  const initialTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  setTheme(initialTheme);
+
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    localStorage.setItem("portfolio-theme", nextTheme);
+    setTheme(nextTheme);
+  });
+}
 
 if (profilePhoto) {
   profilePhoto.addEventListener("error", () => {

@@ -8,6 +8,13 @@
       name="description"
       content="Portfolio website for Ankit Kumar, a robotics graduate student focused on perception, SLAM, and autonomous systems."
     />
+    <script>
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -27,12 +34,33 @@
         <nav id="site-nav" class="site-nav" aria-label="Section navigation">
           <a href="#home">Home</a>
           <a href="#featured-research">Research</a>
-          <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+        >
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4V2"></path>
+            <path d="M12 22v-2"></path>
+            <path d="m4.93 4.93-1.41-1.41"></path>
+            <path d="m20.48 20.48-1.41-1.41"></path>
+            <path d="M4 12H2"></path>
+            <path d="M22 12h-2"></path>
+            <path d="m4.93 19.07-1.41 1.41"></path>
+            <path d="m20.48 3.52-1.41 1.41"></path>
+            <circle cx="12" cy="12" r="4"></circle>
+          </svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 14.3A7.7 7.7 0 0 1 9.7 3 8.5 8.5 0 1 0 21 14.3Z"></path>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -156,11 +184,404 @@
             </div>
           </section>
 
-          <section
-            id="research-pipeline"
-            class="content-section research-pipeline-placeholder reveal-on-scroll"
-          >
-            <h2>Research Pipeline (Coming Next)</h2>
+          <section id="projects" class="content-section">
+            <h2>Highlight Projects</h2>
+
+            <article class="project-card project-card-featured reveal-on-scroll">
+              <div class="project-media-grid">
+                <figure class="project-media-item">
+                  <video
+                    class="project-video"
+                    autoplay
+                    muted
+                    loop
+                    controls
+                    playsinline
+                    preload="none"
+                  >
+                    <source src="assets/videos/ros2_slam_navigation_demo.mp4" type="video/mp4" />
+                  </video>
+                  <figcaption>Autonomous navigation demo in Isaac Sim</figcaption>
+                </figure>
+                <figure class="project-media-item">
+                  <video
+                    class="project-video"
+                    autoplay
+                    muted
+                    loop
+                    controls
+                    playsinline
+                    preload="none"
+                  >
+                    <source src="assets/videos/ros2_slam_robot_trajectory.mp4" type="video/mp4" />
+                  </video>
+                  <figcaption>Robot trajectory and navigation path visualization</figcaption>
+                </figure>
+              </div>
+
+              <div class="project-card-body">
+                <div class="project-card-head">
+                  <h3>Autonomous Navigation and SLAM using ROS2</h3>
+                  <p class="project-skills">
+                    ROS2, RTAB-Map, Nav2, AMCL, LiDAR, Isaac Sim
+                  </p>
+                </div>
+
+                <div class="project-card-grid">
+                  <div class="project-copy-block">
+                    <p class="project-label">Project Description</p>
+                    <p>
+                      Developed a complete ROS2-based autonomous navigation system
+                      capable of mapping unknown environments, localizing within
+                      generated maps, and autonomously navigating to user-defined
+                      goals. The system integrates RTAB-Map for SLAM, AMCL for
+                      localization, and Nav2 for path planning and control. The
+                      project was validated in NVIDIA Isaac Sim using LiDAR-based
+                      perception and autonomous navigation workflows.
+                    </p>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Key Contributions</p>
+                    <ul class="project-list">
+                      <li>Built an end-to-end SLAM and navigation pipeline using ROS2</li>
+                      <li>Generated occupancy-grid maps using RTAB-Map</li>
+                      <li>Integrated AMCL for localization</li>
+                      <li>Configured Nav2 for autonomous navigation</li>
+                      <li>Developed sensor integration and robot control workflows</li>
+                      <li>Validated navigation performance in Isaac Sim</li>
+                    </ul>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Technologies</p>
+                    <div class="project-tech-tags" aria-label="Technologies used">
+                      <span>ROS2</span>
+                      <span>RTAB-Map</span>
+                      <span>Nav2</span>
+                      <span>AMCL</span>
+                      <span>LiDAR</span>
+                      <span>Isaac Sim</span>
+                      <span>RViz2</span>
+                      <span>Python</span>
+                      <span>C++</span>
+                      <span>Ubuntu Linux</span>
+                    </div>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Results</p>
+                    <ul class="project-list">
+                      <li>Generated occupancy-grid maps</li>
+                      <li>Achieved autonomous point-to-point navigation</li>
+                      <li>Integrated mapping, localization, planning, and control</li>
+                      <li>Demonstrated autonomous operation in simulation</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    class="project-button secondary"
+                    href="https://github.com/ankit24079"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    class="project-button primary"
+                    href="assets/videos/ros2_slam_navigation_demo.mp4"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll">
+              <div class="project-media-grid single-media">
+                <figure class="project-media-item">
+                  <video
+                    id="project-3d-video"
+                    class="project-video"
+                    autoplay
+                    muted
+                    loop
+                    controls
+                    playsinline
+                    preload="none"
+                  >
+                    <source src="assets/videos/3D_target_video3.mp4" type="video/mp4" />
+                  </video>
+                  <figcaption>Autonomous drone imagery reconstructed into a 3D scene</figcaption>
+                </figure>
+              </div>
+
+              <div class="project-card-body">
+                <div class="project-card-head">
+                  <h3>3D Reconstruction Using Autonomous Drone Imagery</h3>
+                  <p class="project-skills">
+                    Python, COLMAP, Instant-NGP, Computer Vision, Drone Imagery
+                  </p>
+                </div>
+
+                <div class="project-card-grid">
+                  <div class="project-copy-block">
+                    <p class="project-label">Project Description</p>
+                    <p>
+                      Developed a 3D reconstruction pipeline using images captured
+                      by an autonomous drone circling a target object. The system
+                      combines drone-based image acquisition, image filtering,
+                      COLMAP camera pose estimation, and Instant-NGP neural
+                      rendering to generate high-quality 3D scene reconstructions
+                      from real-world imagery.
+                    </p>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Key Contributions</p>
+                    <ul class="project-list">
+                      <li>Designed autonomous drone image capture around a target object</li>
+                      <li>Processed drone-captured images for reconstruction quality</li>
+                      <li>Used COLMAP for camera poses and sparse scene geometry</li>
+                      <li>Integrated COLMAP outputs with Instant-NGP reconstruction</li>
+                      <li>Improved quality through filtering, cropping, and tuning</li>
+                      <li>Tuned Instant-NGP hash grid settings including n_levels and log2_hashmap_size</li>
+                    </ul>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Technologies</p>
+                    <div class="project-tech-tags" aria-label="Technologies used">
+                      <span>Python</span>
+                      <span>COLMAP</span>
+                      <span>Instant-NGP</span>
+                      <span>Computer Vision</span>
+                      <span>3D Reconstruction</span>
+                      <span>Neural Rendering</span>
+                      <span>Drone Imagery</span>
+                      <span>Camera Pose Estimation</span>
+                      <span>Image Processing</span>
+                    </div>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Results</p>
+                    <ul class="project-list">
+                      <li>Generated 3D scene reconstructions from drone imagery</li>
+                      <li>Reconstructed target-centered outdoor environments</li>
+                      <li>Connected autonomous image capture to neural reconstruction</li>
+                      <li>Demonstrated drone imagery for 3D spatial reconstruction</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    class="project-button secondary"
+                    href="https://github.com/ankit24079"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    class="project-button primary"
+                    href="assets/videos/3D_target_video3.mp4"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll">
+              <div class="project-media-grid single-media">
+                <figure class="project-media-item">
+                  <video
+                    class="project-video"
+                    autoplay
+                    muted
+                    loop
+                    controls
+                    playsinline
+                    preload="none"
+                  >
+                    <source src="assets/videos/vtol_flight_demo.mp4" type="video/mp4" />
+                  </video>
+                  <figcaption>VTOL autonomous flight simulation with waypoint navigation</figcaption>
+                </figure>
+              </div>
+
+              <div class="project-card-body">
+                <div class="project-card-head">
+                  <h3>VTOL UAV Simulation using Gazebo, ROS2, and ArduPilot</h3>
+                  <p class="project-skills">
+                    ROS2, ArduPilot, Gazebo, MAVROS, UAV Simulation
+                  </p>
+                </div>
+
+                <div class="project-card-grid">
+                  <div class="project-copy-block">
+                    <p class="project-label">Project Description</p>
+                    <p>
+                      Developed a complete VTOL UAV simulation environment using
+                      Gazebo, ROS2, and ArduPilot SITL. The system supports
+                      autonomous mission execution, vehicle control, waypoint
+                      navigation, and flight behavior validation before hardware
+                      deployment.
+                    </p>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Key Contributions</p>
+                    <ul class="project-list">
+                      <li>Configured ArduPilot SITL for VTOL simulation</li>
+                      <li>Integrated Gazebo and ROS2 for autonomous flight testing</li>
+                      <li>Developed waypoint navigation and mission workflows</li>
+                      <li>Validated vehicle state estimation and flight behavior</li>
+                      <li>Built ROS2 pipelines for UAV monitoring and control</li>
+                      <li>Tested takeoff, transition, navigation, and landing</li>
+                    </ul>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Technologies</p>
+                    <div class="project-tech-tags" aria-label="Technologies used">
+                      <span>ROS2</span>
+                      <span>ArduPilot</span>
+                      <span>Gazebo</span>
+                      <span>MAVROS</span>
+                      <span>Python</span>
+                      <span>C++</span>
+                      <span>Linux</span>
+                      <span>Git</span>
+                      <span>UAV Simulation</span>
+                      <span>Autonomous Systems</span>
+                    </div>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Results</p>
+                    <ul class="project-list">
+                      <li>Simulated VTOL autonomous flight missions</li>
+                      <li>Executed waypoint navigation in a realistic environment</li>
+                      <li>Validated flight controller behavior before deployment</li>
+                      <li>Built a UAV software-in-the-loop testing workflow</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    class="project-button secondary"
+                    href="https://github.com/ankit24079"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    class="project-button primary"
+                    href="assets/videos/vtol_flight_demo.mp4"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll">
+              <div class="project-media-grid single-media">
+                <figure class="project-media-item">
+                  <div class="project-image-frame">
+                    <img
+                      class="project-image"
+                      src="assets/projects/football_tracking_analytics.png"
+                      alt="Football player tracking and analytics visualization"
+                    />
+                  </div>
+                  <figcaption>Football player tracking and match analytics overlay</figcaption>
+                </figure>
+              </div>
+
+              <div class="project-card-body">
+                <div class="project-card-head">
+                  <h3>AI-Powered Football Player Tracking and Analysis</h3>
+                  <p class="project-skills">
+                    Python, OpenCV, YOLO, Multi-Object Tracking, Sports Analytics
+                  </p>
+                </div>
+
+                <div class="project-card-grid">
+                  <div class="project-copy-block">
+                    <p class="project-label">Project Description</p>
+                    <p>
+                      Developed a computer vision pipeline for real-time football
+                      player tracking and match analytics from broadcast video
+                      footage. The system detects and tracks players, compensates
+                      for camera motion, estimates speed and distance traveled,
+                      and generates team-level analytics for possession and
+                      positioning.
+                    </p>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Key Contributions</p>
+                    <ul class="project-list">
+                      <li>Built a multi-object tracking pipeline for football players</li>
+                      <li>Implemented camera motion compensation</li>
+                      <li>Estimated player speed and distance traveled</li>
+                      <li>Generated ball possession statistics</li>
+                      <li>Developed visual analytics overlays</li>
+                      <li>Produced real-time performance metrics</li>
+                    </ul>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Technologies</p>
+                    <div class="project-tech-tags" aria-label="Technologies used">
+                      <span>Python</span>
+                      <span>OpenCV</span>
+                      <span>YOLO</span>
+                      <span>Computer Vision</span>
+                      <span>Multi-Object Tracking</span>
+                      <span>NumPy</span>
+                      <span>Deep Learning</span>
+                      <span>Sports Analytics</span>
+                    </div>
+                  </div>
+
+                  <div class="project-copy-block">
+                    <p class="project-label">Results</p>
+                    <ul class="project-list">
+                      <li>Tracked players across broadcast footage</li>
+                      <li>Calculated player speed and total distance covered</li>
+                      <li>Generated team possession statistics</li>
+                      <li>Produced real-time visual analytics overlays</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    class="project-button secondary"
+                    href="https://github.com/ankit24079"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
           </section>
 
           <section id="experience" class="content-section">
@@ -193,109 +614,166 @@
             </article>
           </section>
 
-          <section id="projects" class="content-section">
-            <h2>Highlight Projects</h2>
-
-            <article class="project-item">
-              <h3>Autonomous Mobile Robot Navigation and SLAM in Isaac Sim</h3>
-              <p class="project-skills">ROS2, RTAB-Map, Nav2, LiDAR, Isaac Sim</p>
-              <p class="project-label">Description</p>
-              <p>
-                Built a multi-sensor mobile robot pipeline for RGB-D SLAM, LiDAR
-                localization, and waypoint navigation in simulation.
-              </p>
-            </article>
-
-            <article class="project-item">
-              <h3>3D Reconstruction Using Autonomous Drone Imagery</h3>
-              <p class="project-skills">ROS, OpenCV, PyTorch, COLMAP, Instant-NGP</p>
-              <p class="project-label">Description</p>
-              <p>
-                Developed an autonomous image-capture workflow and 3D reconstruction
-                pipeline for high-fidelity scene modeling.
-              </p>
-            </article>
-
-            <article class="project-item">
-              <h3>VTOL Simulation with Gazebo and ArduPilot</h3>
-              <p class="project-skills">Gazebo Harmonic, ROS2, ArduPilot, MAVROS</p>
-              <p class="project-label">Description</p>
-              <p>
-                Created a VTOL simulation framework for autonomous flight testing,
-                waypoint missions, and closed-loop validation.
-              </p>
-            </article>
-
-            <article class="project-item">
-              <h3>AI-Powered Football Player Tracking and Analysis</h3>
-              <p class="project-skills">PyTorch, OpenCV, YOLO, Optical Flow</p>
-              <p class="project-label">Description</p>
-              <p>
-                Built a sports tracking pipeline for player detection, team
-                classification, motion analysis, and movement estimation.
-              </p>
-            </article>
-          </section>
-
           <section id="skills" class="content-section">
             <h2>Skills</h2>
 
-            <article class="skills-item">
-              <h3>Programming</h3>
-              <p>Python, C++, MATLAB</p>
-            </article>
+            <div class="skills-grid">
+              <article class="skills-item">
+                <h3>Robotics and Autonomy</h3>
+                <p>
+                  End-to-end robotic system development for navigation, simulation,
+                  perception, and autonomous mission execution.
+                </p>
+                <div class="skill-tags" aria-label="Robotics and autonomy skills">
+                  <span>ROS2</span>
+                  <span>Nav2</span>
+                  <span>MAVROS</span>
+                  <span>ArduPilot</span>
+                  <span>Gazebo</span>
+                  <span>Isaac Sim</span>
+                  <span>UAV Systems</span>
+                </div>
+              </article>
 
-            <article class="skills-item">
-              <h3>Robotics and Systems</h3>
-              <p>ROS, ROS2, Nav2, MAVROS, ArduPilot, Gazebo, NVIDIA Isaac Sim</p>
-            </article>
+              <article class="skills-item">
+                <h3>Perception, SLAM, and 3D Vision</h3>
+                <p>
+                  Computer vision pipelines for mapping, localization, stereo
+                  perception, tracking, and 3D reconstruction from robotic sensors.
+                </p>
+                <div class="skill-tags" aria-label="Perception and SLAM skills">
+                  <span>RTAB-Map</span>
+                  <span>AMCL</span>
+                  <span>LiDAR</span>
+                  <span>Stereo Vision</span>
+                  <span>Tracking</span>
+                  <span>COLMAP</span>
+                  <span>Instant-NGP</span>
+                </div>
+              </article>
 
-            <article class="skills-item">
-              <h3>Perception and SLAM</h3>
-              <p>Stereo Vision, Visual SLAM, RTAB-Map, LiDAR Localization, Optical Flow</p>
-            </article>
+              <article class="skills-item">
+                <h3>AI, Deep Learning, and Analytics</h3>
+                <p>
+                  Applied machine learning for detection, segmentation, sports
+                  analytics, ember tracking, and embedded perception workflows.
+                </p>
+                <div class="skill-tags" aria-label="AI and analytics skills">
+                  <span>PyTorch</span>
+                  <span>YOLO</span>
+                  <span>OpenCV</span>
+                  <span>NumPy</span>
+                  <span>TensorRT</span>
+                  <span>Computer Vision</span>
+                  <span>Sports Analytics</span>
+                </div>
+              </article>
 
-            <article class="skills-item">
-              <h3>Machine Learning and Deployment</h3>
-              <p>PyTorch, YOLO, CNNs, Jetson Orin Nano, TensorRT, 3D Reconstruction</p>
-            </article>
+              <article class="skills-item">
+                <h3>Programming and Deployment</h3>
+                <p>
+                  Practical software development across robotics stacks, simulation
+                  tooling, Linux environments, and edge deployment platforms.
+                </p>
+                <div class="skill-tags" aria-label="Programming and deployment skills">
+                  <span>Python</span>
+                  <span>C++</span>
+                  <span>MATLAB</span>
+                  <span>Linux</span>
+                  <span>Git</span>
+                  <span>Jetson Orin Nano</span>
+                  <span>Ubuntu</span>
+                </div>
+              </article>
+            </div>
           </section>
 
           <section id="education" class="content-section">
             <h2>Education</h2>
 
-            <article class="education-item with-logo">
-              <img
-                class="education-logo"
-                src="https://en.wikipedia.org/wiki/Special:FilePath/University%20of%20Minnesota%20Logo.svg"
-                alt="University of Minnesota logo"
-              />
-              <div>
-                <h3>University of Minnesota</h3>
-                <p>Master of Science in Robotics</p>
-                <p>Twin Cities, Minnesota | Sept 2024 - May 2026 | GPA: 3.78 / 4.0</p>
+            <article class="education-card">
+              <div class="education-main">
+                <img
+                  class="education-logo"
+                  src="https://en.wikipedia.org/wiki/Special:FilePath/University%20of%20Minnesota%20Logo.svg"
+                  alt="University of Minnesota logo"
+                />
+                <div>
+                  <h3>University of Minnesota</h3>
+                  <p class="education-degree">Master of Science in Robotics</p>
+                  <div class="education-meta" aria-label="Education details">
+                    <span>Minneapolis, Minnesota</span>
+                    <span>GPA: 3.78 / 4.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="education-side">
+                <span class="education-date">Sept 2024 - May 2026</span>
               </div>
             </article>
 
-            <article class="education-item with-logo">
-              <img
-                class="education-logo"
-                src="https://en.wikipedia.org/wiki/Special:FilePath/Jadavpur%20University%20Wordmark%20Logo.svg"
-                alt="Jadavpur University logo"
-              />
-              <div>
-                <h3>Jadavpur University</h3>
-                <p>Bachelor of Mechanical Engineering</p>
-                <p>Kolkata, India | Aug 2018 - May 2022 | GPA: 8.55 / 10</p>
+            <article class="education-card">
+              <div class="education-main">
+                <img
+                  class="education-logo"
+                  src="https://en.wikipedia.org/wiki/Special:FilePath/Jadavpur%20University%20Wordmark%20Logo.svg"
+                  alt="Jadavpur University logo"
+                />
+                <div>
+                  <h3>Jadavpur University</h3>
+                  <p class="education-degree">Bachelor of Engineering in Mechanical Engineering</p>
+                  <div class="education-meta" aria-label="Education details">
+                    <span>Kolkata, India</span>
+                    <span>GPA: 8.55 / 10</span>
+                  </div>
+                </div>
+              </div>
+              <div class="education-side">
+                <span class="education-date">Aug 2018 - May 2022</span>
               </div>
             </article>
           </section>
 
           <section id="contact" class="content-section contact-section">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:kuma0334@umn.edu">kuma0334@umn.edu</a></p>
-            <p>GitHub: <a href="https://github.com/ankit24079" target="_blank" rel="noreferrer">github.com/ankit24079</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/ankit2407" target="_blank" rel="noreferrer">linkedin.com/in/ankit2407</a></p>
+            <div class="contact-footer">
+              <h2>Let's Connect</h2>
+              <p>
+                Interested in robotics, autonomy, perception, or software
+                engineering opportunities? Feel free to reach out.
+              </p>
+
+              <div class="contact-row" aria-label="Contact links">
+                <a class="contact-link" href="mailto:kuma0334@umn.edu">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 6h16v12H4z"></path>
+                    <path d="m4 7 8 6 8-6"></path>
+                  </svg>
+                  <span>kuma0334@umn.edu</span>
+                </a>
+                <a
+                  class="contact-link brand-link"
+                  href="https://www.linkedin.com/in/ankit2407"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12ZM5.6 9.75h2.68V18H5.6zm4.36 0h2.57v1.13h.04c.36-.68 1.23-1.4 2.53-1.4 2.7 0 3.2 1.82 3.2 4.18V18h-2.68v-3.86c0-.92-.02-2.1-1.25-2.1-1.25 0-1.44.99-1.44 2.03V18H9.96z"></path>
+                  </svg>
+                  <span>Ankit Kumar</span>
+                </a>
+                <a
+                  class="contact-link brand-link"
+                  href="https://github.com/ankit24079"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.78.61-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.61.07-.61 1 .07 1.53 1.05 1.53 1.05.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.74 0 0 .85-.28 2.78 1.05A9.46 9.46 0 0 1 12 6.88c.85 0 1.71.12 2.51.35 1.92-1.33 2.77-1.05 2.77-1.05.55 1.43.2 2.48.1 2.74.64.72 1.03 1.63 1.03 2.75 0 3.92-2.33 4.78-4.56 5.04.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"></path>
+                  </svg>
+                  <span>Ankit24079</span>
+                </a>
+              </div>
+            </div>
           </section>
         </div>
       </div>
